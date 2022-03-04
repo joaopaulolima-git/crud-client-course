@@ -1,9 +1,9 @@
 package com.jpdev.crudclient.services.excepitions;
 
-public class EntityNotFoundExcepition extends RuntimeException {
+public class ResourceNotFoundExcepition extends RuntimeException {
 	private static final long serialVersionUID = 1L;
 	
-	public EntityNotFoundExcepition(String msg) {
+	public ResourceNotFoundExcepition(String msg) {
 		super(msg);
 	}
 }

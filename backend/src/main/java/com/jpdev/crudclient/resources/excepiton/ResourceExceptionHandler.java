@@ -9,13 +9,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.jpdev.crudclient.services.excepitions.EntityNotFoundExcepition;
+import com.jpdev.crudclient.services.excepitions.ResourceNotFoundExcepition;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {
 	
-	@ExceptionHandler(EntityNotFoundExcepition.class)
-	public ResponseEntity<StandardError> entityNotFound(EntityNotFoundExcepition e,HttpServletRequest request){
+	@ExceptionHandler(ResourceNotFoundExcepition.class)
+	public ResponseEntity<StandardError> entityNotFound(ResourceNotFoundExcepition e,HttpServletRequest request){
 		StandardError err = new StandardError();
 		err.setTimestemp(Instant.now());
 		err.setStatus(HttpStatus.NOT_FOUND.value());
